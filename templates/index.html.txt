@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fake News Detector</h1>
+        <form method="POST" action="/predict">
+            <label for="news">Enter News Text:</label>
+            <textarea name="news" id="news" rows="5" placeholder="Paste news article here..."></textarea>
+            <button type="submit">Detect</button>
+        </form>
+
+        {% if prediction_text %}
+        <h2>Prediction: {{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
